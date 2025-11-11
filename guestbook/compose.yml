@@ -1,0 +1,21 @@
+services:
+  redis-master:
+    image: "redis:6.0.5"
+    container_name: redies-master
+    ports: 
+      - "6379:6379"
+
+  redis-replica:
+    image: "taytoto/redis-slave"
+    build: ./redis-slave/
+    container_name: redies-replica
+    ports: 
+      - "6380:6379"
+
+  php-redis:
+    image: "taytoto/php-redis"
+    build: ./php-redis/
+    container_name: php-redis
+    ports: 
+      - "80:80"
+
