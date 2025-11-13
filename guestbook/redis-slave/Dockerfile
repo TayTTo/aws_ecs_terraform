@@ -14,6 +14,5 @@
 
 FROM redis:6.0.5
 
-RUN sysctl vm.overcommit_memory=1
 COPY run.sh /
 CMD /run.sh
